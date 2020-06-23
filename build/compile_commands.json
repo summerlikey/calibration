@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/build",
+  "command": "/usr/bin/g++-7   -isystem /usr/local/opencv346/include -isystem /usr/local/opencv346/include/opencv  -g   -std=gnu++11 -o CMakeFiles/stereo_calib.dir/stereo_calib.o -c /home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/stereo_calib.cpp",
+  "file": "/home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/stereo_calib.cpp"
+},
+{
+  "directory": "/home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/build",
+  "command": "/usr/bin/g++-7   -isystem /usr/local/opencv346/include -isystem /usr/local/opencv346/include/opencv  -g   -std=gnu++11 -o CMakeFiles/capture.dir/capture.o -c /home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/capture.cpp",
+  "file": "/home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/capture.cpp"
+},
+{
+  "directory": "/home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/build",
+  "command": "/usr/bin/g++-7   -isystem /usr/local/opencv346/include -isystem /usr/local/opencv346/include/opencv  -g   -std=gnu++11 -o CMakeFiles/imagelist_creator.dir/imagelist_creator.o -c /home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/imagelist_creator.cpp",
+  "file": "/home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/imagelist_creator.cpp"
+},
+{
+  "directory": "/home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/build",
+  "command": "/usr/bin/g++-7   -isystem /usr/local/opencv346/include -isystem /usr/local/opencv346/include/opencv  -g   -std=gnu++11 -o CMakeFiles/zhang.dir/zhang.o -c /home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/zhang.cpp",
+  "file": "/home/ganggang/Documents/opencv-test/calibration/my_camera_calibration/zhang.cpp"
+}
+]
