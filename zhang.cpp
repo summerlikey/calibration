@@ -13,7 +13,7 @@
 using namespace cv;
 using namespace std;
 
-int zhang_calibration(string &images_path,string &result_path){
+int zhang_calibration(string &images_path,string &result_path,int inter_x_num,int inter_y_num){
 	ifstream fin(images_path,ios::in); /* 标定所用图像文件的路径 */
 	if(!fin.is_open()){
 		cout<<"error"<<endl;
@@ -24,7 +24,7 @@ int zhang_calibration(string &images_path,string &result_path){
 	cout << "开始提取角点………………";
 	int image_count = 0;  /* 图像数量 */
 	Size image_size;  /* 图像的尺寸 */
-	Size board_size = Size(12, 9);    /* 标定板上每行、列的角点数 */
+	Size board_size = Size(inter_x_num, inter_y_num);    /* 标定板上每行、列的角点数 */
 	vector<Point2f> image_points_buf;  /* 缓存每幅图像上检测到的角点 */
 	vector<vector<Point2f>> image_points_seq; /* 保存检测到的所有角点 */
 	string filename;
@@ -207,8 +207,12 @@ int main()
 	string right_path = "path/right_images.txt";
 	string right_result = "path/right_result.txt";
 
-	zhang_calibration(left_path,left_result);
-	zhang_calibration(right_path,right_result);
+	//zhang_calibration(left_path,left_result);
+	//zhang_calibration(right_path,right_result);
 
+	string images300_path = "path/images300.txt";
+	string images300_result = "path/images300_result.txt";
+
+	zhang_calibration(images300_path,images300_result,12,4);
 	return 0;
 }
