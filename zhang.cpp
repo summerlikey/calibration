@@ -13,7 +13,10 @@
 using namespace cv;
 using namespace std;
 
-int zhang_calibration(string &images_path,string &result_path,int inter_x_num,int inter_y_num){
+int zhang_calibration(string &images_path,string &result_path,int inter_x_num,int inter_y_num,int square_width,int square_height){
+	//1,2输入图片路径，输出结果路径
+	//3,4内部角点个数
+	//5,6方格实际大小
 	ifstream fin(images_path,ios::in); /* 标定所用图像文件的路径 */
 	if(!fin.is_open()){
 		cout<<"error"<<endl;
@@ -59,6 +62,7 @@ int zhang_calibration(string &images_path,string &result_path,int inter_x_num,in
 		{
 			image_count--;
 			cout << "can not find chessboard corners!\n"; //找不到角点 
+			cout << "can not find: "<<filename<<endl;
 			continue; 
 			//exit(1);
 		}
@@ -82,6 +86,8 @@ int zhang_calibration(string &images_path,string &result_path,int inter_x_num,in
 			waitKey(500);    
 		}
 	}
+
+
 	int total = image_points_seq.size();
 	cout << "total = " << total << endl;
 	int CornerNum = board_size.width*board_size.height;  //每张图片上总的角点数  
@@ -111,7 +117,7 @@ int zhang_calibration(string &images_path,string &result_path,int inter_x_num,in
 	//以下是摄像机标定  
 	cout << "开始标定………………";
 	/*棋盘三维信息*/
-	Size square_size = Size(7, 7);  /* 实际测量得到的标定板上每个棋盘格的大小 */
+	Size square_size = Size(square_width, square_height);  /* 实际测量得到的标定板上每个棋盘格的大小 */
 	vector<vector<Point3f>> object_points; /* 保存标定板上角点的三维坐标 */
 										   /*内外参数*/
 	Mat cameraMatrix = Mat(3, 3, CV_32FC1, Scalar::all(0)); /* 摄像机内参数矩阵 */
@@ -213,6 +219,7 @@ int main()
 	string images300_path = "path/images300.txt";
 	string images300_result = "path/images300_result.txt";
 
-	zhang_calibration(images300_path,images300_result,12,4);
+	
+	zhang_calibration(images300_path,images300_result,12,4,10,10);
 	return 0;
 }
