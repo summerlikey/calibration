@@ -1,0 +1,6 @@
+set(TEST_SOURCES zhang stereo_calib imagelist_creator capture_images)
+FOREACH(test_src ${TEST_SOURCES})
+    ADD_EXECUTABLE(${test_src} ${test_src}.cpp)
+    target_link_libraries(${test_src}  ${INTERNAL_LIBS} ${THIRD_PARTY_LIBS} myCalibration)
+    ADD_TEST(${test_src} ${test_src} ${test_src})
+ENDFOREACH(test_src)
